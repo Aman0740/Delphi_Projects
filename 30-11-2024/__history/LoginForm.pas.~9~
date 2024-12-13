@@ -1,0 +1,44 @@
+unit LoginForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TFormLogin = class(TForm)
+    DBEditUserName: TDBEdit;
+    DBEditPassword: TDBEdit;
+    lblUserName: TLabel;
+    lblPassword: TLabel;
+    btnLogin: TButton;
+    btnBackToSignUp: TButton;
+    lblLoginPage: TLabel;
+    procedure btnBackToSignUpClick(Sender: TObject);
+    procedure btnLoginClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormLogin: TFormLogin;
+
+implementation
+uses SignUpForm;
+{$R *.dfm}
+
+procedure TFormLogin.btnBackToSignUpClick(Sender: TObject);
+begin
+           FormSignUp := TFormSignUp.create( self );
+            FormSignUp.show;
+end;
+
+eprocedure TFormLogin.btnLoginClick(Sender: TObject);
+begin
+
+end;
+
+nd.

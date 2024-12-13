@@ -1,0 +1,49 @@
+unit MyDataTableForm2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFormMyDataTable2 = class(TForm)
+    Memo1: TMemo;
+    btnShowData: TButton;
+    btnDelete: TButton;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnShowDataClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormMyDataTable2: TFormMyDataTable2;
+
+implementation
+
+uses MyDataTableForm;
+
+{$R *.dfm}
+
+procedure TFormMyDataTable2.btnShowDataClick(Sender: TObject);
+begin
+  if Assigned(Form1DataTable) and (Form1DataTable.MemoData <> nil) then
+  begin
+    Memo1.Lines.Clear;
+    Memo1.Lines.AddStrings(Form1DataTable.MemoData);
+  end
+  else
+    ShowMessage('No data available.');
+end;
+
+procedure TFormMyDataTable2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := caFree;
+  FormMyDataTable2 := nil; // Properly release the form
+end;
+
+end.
+

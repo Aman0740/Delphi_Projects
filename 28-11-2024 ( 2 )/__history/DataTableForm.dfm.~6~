@@ -1,0 +1,139 @@
+object FormDataTable: TFormDataTable
+  Left = 0
+  Top = 0
+  Caption = 'DataTable'
+  ClientHeight = 381
+  ClientWidth = 505
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 46
+    Top = 56
+    Width = 339
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'AcId'
+        Width = -1
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'Name'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Email'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Contact'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Password'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'AcId'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Name'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Email'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Contact'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Password'
+        Visible = True
+      end>
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 56
+    Top = 200
+    Width = 240
+    Height = 25
+    DataSource = DataSource1
+    TabOrder = 1
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 416
+    Top = 160
+  end
+  object adoconnection: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Password=saadmin;Persist Security Info=True;' +
+      'User ID=sa;Initial Catalog=DemoDataBase;Data Source=DESKTOP-3PUQ' +
+      '500\SQLEXPRESS'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 416
+    Top = 32
+  end
+  object ADOTable1: TADOTable
+    Active = True
+    Connection = adoconnection
+    CursorType = ctStatic
+    TableName = 'Table_1'
+    Left = 416
+    Top = 96
+  end
+  object MainMenu1: TMainMenu
+    Left = 8
+    Top = 8
+    object Demo1: TMenuItem
+      Caption = 'Demo'
+      object Demo11: TMenuItem
+        Caption = 'Demo 1'
+      end
+      object Demo21: TMenuItem
+        Caption = 'Demo 2'
+      end
+    end
+    object File1: TMenuItem
+      Caption = 'File'
+      object Save1: TMenuItem
+        Caption = 'Save'
+      end
+      object SaveAs1: TMenuItem
+        Caption = 'Save As'
+      end
+    end
+  end
+end

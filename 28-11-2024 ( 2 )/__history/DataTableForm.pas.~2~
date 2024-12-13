@@ -1,0 +1,52 @@
+unit DataTableForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, vcl.wwspeedbutton,
+  vcl.wwdbnavigator, Vcl.ExtCtrls, vcl.wwclearpanel, Data.DB, Data.Win.ADODB,
+  Vcl.Grids, Vcl.DBGrids;
+
+type
+  TFormDataTable = class(TForm)
+    DataSource1: TDataSource;
+    ADOConnection1: TADOConnection;
+    ADOTable1: TADOTable;
+    wwDBNavigator1: TwwDBNavigator;
+    wwDBNavigator1First: TwwNavButton;
+    wwDBNavigator1PriorPage: TwwNavButton;
+    wwDBNavigator1Prior: TwwNavButton;
+    wwDBNavigator1Next: TwwNavButton;
+    wwDBNavigator1NextPage: TwwNavButton;
+    wwDBNavigator1Last: TwwNavButton;
+    wwDBNavigator1Insert: TwwNavButton;
+    wwDBNavigator1Delete: TwwNavButton;
+    wwDBNavigator1Edit: TwwNavButton;
+    wwDBNavigator1Post: TwwNavButton;
+    wwDBNavigator1Cancel: TwwNavButton;
+    wwDBNavigator1Refresh: TwwNavButton;
+    wwDBNavigator1SaveBookmark: TwwNavButton;
+    wwDBNavigator1RestoreBookmark: TwwNavButton;
+    MainMenu1: TMainMenu;
+    Demo1: TMenuItem;
+    Demo11: TMenuItem;
+    Demo21: TMenuItem;
+    File1: TMenuItem;
+    Save1: TMenuItem;
+    SaveAs1: TMenuItem;
+    DBGrid1: TDBGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormDataTable: TFormDataTable;
+
+implementation
+
+{$R *.dfm}
+
+end.

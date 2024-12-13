@@ -1,0 +1,38 @@
+unit DataTableForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, vcl.wwspeedbutton,
+  vcl.wwdbnavigator, Vcl.ExtCtrls, vcl.wwclearpanel, Data.DB, Data.Win.ADODB,
+  Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls;
+
+type
+  TFormDataTable = class(TForm)
+    DataSource1: TDataSource;
+    adoconnection: TADOConnection;
+    ADOTable1: TADOTable;
+    MainMenu1: TMainMenu;
+    Demo1: TMenuItem;
+    Demo11: TMenuItem;
+    Demo21: TMenuItem;
+    File1: TMenuItem;
+    Save1: TMenuItem;
+    SaveAs1: TMenuItem;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormDataTable: TFormDataTable;
+
+implementation
+
+{$R *.dfm}
+
+end.

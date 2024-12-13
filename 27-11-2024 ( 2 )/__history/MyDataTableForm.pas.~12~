@@ -1,0 +1,70 @@
+unit MyDataTableForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1DataTable = class(TForm)
+    edtName: TEdit;
+    lblName: TLabel;
+    lblRollNo: TLabel;
+    lblAge: TLabel;
+    lblCource: TLabel;
+    lblMarks: TLabel;
+    btnSubmit: TButton;
+    btnCall: TButton;
+    edtRollNo: TEdit;
+    edtAge: TEdit;
+    edtCource: TEdit;
+    edtMarks: TEdit;
+    procedure btnCallClick(Sender: TObject);
+    procedure btnSubmitClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    MemoData: TStringList; // Shared data
+  end;
+
+var
+  Form1DataTable: TForm1DataTable;
+
+implementation
+
+uses MyDataTableForm2;
+
+{$R *.dfm}
+
+procedure TForm1DataTable.btnCallClick(Sender: TObject);
+begin
+  if not Assigned(FormMyDataTable2) then
+    FormMyDataTable2 := TFormMyDataTable2.Create(Self);
+  FormMyDataTable2.Show;
+end;
+
+procedure TForm1DataTable.btnSubmitClick(Sender: TObject);
+var
+  DataLine: string;
+begin
+  if MemoData = nil then
+    MemoData := TStringList.Create;
+
+  // Prepare data line and add to MemoData
+  DataLine := Format('Name: %s, Roll No: %s, Age: %s, Course: %s, Marks: %s', [
+    edtName.Text,
+    edtRollNo.Text,
+    edtAge.Text,
+    edtCource.Text,
+    edtMarks.Text
+  ]);
+
+  MemoData.Add(DataLine);
+
+  ShowMessage('Data submitted successfully!');
+end;
+
+end.
+

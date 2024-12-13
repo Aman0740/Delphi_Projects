@@ -1,0 +1,35 @@
+unit MyDataTableForm2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFormMyDataTable2 = class(TForm)
+    Memo1: TMemo;
+    btnShowData: TButton;
+    btnDelete: TButton;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormMyDataTable2: TFormMyDataTable2;
+
+implementation
+uses Form1DataTable ;
+{$R *.dfm}
+
+procedure TFormMyDataTable2.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+           Action := caFree;
+            FormMyTest2 := nil;
+end;
+
+end.

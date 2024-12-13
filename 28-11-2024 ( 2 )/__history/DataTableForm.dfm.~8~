@@ -1,0 +1,88 @@
+object FormDataTable: TFormDataTable
+  Left = 0
+  Top = 0
+  Caption = 'DataTable'
+  ClientHeight = 361
+  ClientWidth = 505
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBNavigator1: TDBNavigator
+    Left = 56
+    Top = 200
+    Width = 240
+    Height = 25
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 40
+    Top = 74
+    Width = 320
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        Visible = True
+      end>
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 416
+    Top = 160
+  end
+  object adoconnection: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Password=saadmin;Persist Security Info=True;' +
+      'User ID=sa;Initial Catalog=DemoDataTable;Data Source=DESKTOP-3PU' +
+      'Q500\SQLEXPRESS'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 416
+    Top = 32
+  end
+  object ADOTable1: TADOTable
+    Connection = adoconnection
+    CursorType = ctStatic
+    TableName = 'Table_1'
+    Left = 416
+    Top = 96
+  end
+  object MainMenu1: TMainMenu
+    Left = 8
+    Top = 8
+    object Demo1: TMenuItem
+      Caption = 'Demo'
+      object Demo11: TMenuItem
+        Caption = 'Demo 1'
+      end
+      object Demo21: TMenuItem
+        Caption = 'Demo 2'
+      end
+    end
+    object File1: TMenuItem
+      Caption = 'File'
+      object Save1: TMenuItem
+        Caption = 'Save'
+      end
+      object SaveAs1: TMenuItem
+        Caption = 'Save As'
+      end
+    end
+  end
+end

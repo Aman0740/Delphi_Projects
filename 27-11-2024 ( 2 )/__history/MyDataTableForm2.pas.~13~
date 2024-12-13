@@ -1,0 +1,61 @@
+unit MyDataTableForm2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFormMyDataTable2 = class(TForm)
+    Memo1: TMemo;
+    btnShowData: TButton;
+    btnDelete: TButton;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnShowDataClick(Sender: TObject);
+    procedure btnDeleteClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormMyDataTable2: TFormMyDataTable2;
+
+implementation
+
+uses
+  MyDataTableForm;
+
+{$R *.dfm}
+
+procedure TFormMyDataTable2.btnShowDataClick(Sender: TObject);
+begin
+  // Load data from the main form's DataList to the memo
+  if Assigned(Form1DataTable) and (Form1DataTable.DataList.Count > 0) then
+  begin
+    Memo1.Lines.Assign(Form1DataTable.DataList); // Display the data in the memo
+  end
+  else
+    ShowMessage('No data available.');
+end;
+
+procedure TFormMyDataTable2.btnDeleteClick(Sender: TObject);
+begin
+  // Clear the memo and the data list in the main form
+  Memo1.Clear;
+  if Assigned(Form1DataTable) then
+    Form1DataTable.DataList.Clear;
+
+  ShowMessage('All data has been deleted.');
+end;
+
+procedure TFormMyDataTable2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := caFree;
+  FormMyDataTable2 := nil; // Properly release the form instance
+end;
+
+end.
+

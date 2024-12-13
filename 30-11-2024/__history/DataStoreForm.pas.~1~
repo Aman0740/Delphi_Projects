@@ -1,0 +1,25 @@
+unit DataStoreForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Grids, vcl.wwdbigrd, vcl.wwdbgrid;
+
+type
+  TFormDataStore = class(TForm)
+    wwDBGrid1: TwwDBGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormDataStore: TFormDataStore;
+
+implementation
+
+{$R *.dfm}
+
+end.

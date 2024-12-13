@@ -1,0 +1,69 @@
+unit CalculatorCreateFromRadioButton;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFormCalculatorCreateFromRadioButton = class(TForm)
+    rdbSum: TRadioButton;
+    edtValue: TEdit;
+    edtValue2: TEdit;
+    Button1: TButton;
+    edtTotal: TEdit;
+    rdbDiv: TRadioButton;
+    rdbMul: TRadioButton;
+    rdbSub: TRadioButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  CalculatorCreateFromRadioButton: TFormCalculatorCreateFromRadioButton;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormCalculatorCreateFromRadioButton.Button1Click(Sender: TObject);
+var
+  ival1, ival2: Integer;
+  resultValue: Double;
+begin
+  try
+    // Convert input values to integers
+    ival1 := StrToInt(edtValue.Text);
+    ival2 := StrToInt(edtValue2.Text);
+
+    // Perform the selected operation
+    if rdbSum.Checked then
+      edtTotal.Text := IntToStr(ival1 + ival2)
+    else if rdbMul.Checked then
+      edtTotal.Text := IntToStr(ival1 * ival2)
+    else if rdbSub.Checked then
+      edtTotal.Text := IntToStr(ival1 - ival2)
+    else if rdbDiv.Checked then
+    begin
+      if ival2 = 0 then
+        raise Exception.Create('Division by zero is not allowed.');
+
+      resultValue := ival1 / ival2;
+      edtTotal.Text := FloatToStr(resultValue); // Display result as a floating-point number
+    end
+    else
+      ShowMessage('Please select an operation.');
+  except
+    on E: EConvertError do
+      ShowMessage('Please enter valid integer values.');
+    on E: Exception do
+      ShowMessage('Error: ' + E.Message);
+  end;
+end;
+
+end.
+

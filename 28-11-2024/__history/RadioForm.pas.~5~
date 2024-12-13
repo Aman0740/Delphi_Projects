@@ -1,0 +1,32 @@
+unit RadioForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFormRadio = class(TForm)
+    edtValue: TEdit;
+    edtValue2: TEdit;
+    Button1: TButton;
+    rdbSum: TRadioButton;
+    rdbSub: TRadioButton;
+    rdbMul: TRadioButton;
+    rdbDiv: TRadioButton;
+    edtTotal: TEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormRadio: TFormRadio;
+
+implementation
+
+{$R *.dfm}
+
+end.

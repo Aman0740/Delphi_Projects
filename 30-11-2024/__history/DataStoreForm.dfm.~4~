@@ -1,0 +1,66 @@
+object FormDataStore: TFormDataStore
+  Left = 0
+  Top = 0
+  Caption = 'DataStore'
+  ClientHeight = 383
+  ClientWidth = 687
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object wwDBGrid1: TwwDBGrid
+    Left = 8
+    Top = 192
+    Width = 537
+    Height = 120
+    Selected.Strings = (
+      'Name'#9'20'#9'Name'
+      'Email'#9'20'#9'Email'
+      'Password'#9'20'#9'Password'
+      'Cunform Password'#9'20'#9'Cunform Password')
+    IniAttributes.Delimiter = ';;'
+    IniAttributes.UnicodeIniFile = False
+    TitleColor = clBtnFace
+    FixedCols = 0
+    ShowHorzScrollBar = True
+    DataSource = DataSource1
+    TabOrder = 0
+    TitleAlignment = taLeftJustify
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    TitleLines = 1
+    TitleButtons = False
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Password=saadmin;Persist Security Info=True;' +
+      'User ID=sa;Initial Catalog=SignUpLoginSystem;Data Source=DESKTOP' +
+      '-3PUQ500\SQLEXPRESS'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 56
+    Top = 80
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 280
+    Top = 144
+  end
+  object ADOTable1: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'User_SignUp_Login_System'
+    Left = 168
+    Top = 120
+  end
+end

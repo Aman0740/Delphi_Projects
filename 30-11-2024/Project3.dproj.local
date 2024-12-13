@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/11/28 18:18:16.000.062,=C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/11/29 16:13:28.000.001,=C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/11/30 10:31:55.000.848,=C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/11/30 10:37:28.000.799,=C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2024/11/30 11:06:09.000.592,C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\Delphi Project\30-11-2024\SignUpLoginForm.pas</Transaction>
+    <Transaction>2024/11/30 11:06:09.000.592,C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\Delphi Project\30-11-2024\SignUpLoginForm.dfm</Transaction>
+    <Transaction>2024/11/30 11:06:13.000.153,C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Unit2.dfm=E:\Delphi Project\30-11-2024\Unit2.dfm</Transaction>
+    <Transaction>2024/11/30 11:06:13.000.153,C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Unit2.pas=E:\Delphi Project\30-11-2024\Unit2.pas</Transaction>
+    <Transaction>2024/11/30 11:06:16.000.138,C:\Users\Admin\Documents\Embarcadero\Studio\Projects\Project3.dproj=E:\Delphi Project\30-11-2024\Project3.dproj</Transaction>
+    <Transaction>2024/11/30 11:08:47.000.769,E:\Delphi Project\30-11-2024\Unit2.dfm=E:\Delphi Project\30-11-2024\SignUpForm.dfm</Transaction>
+    <Transaction>2024/11/30 11:08:47.000.769,E:\Delphi Project\30-11-2024\Unit2.pas=E:\Delphi Project\30-11-2024\SignUpForm.pas</Transaction>
+    <Transaction>2024/11/30 11:09:09.000.651,=E:\Delphi Project\30-11-2024\Unit3.pas</Transaction>
+    <Transaction>2024/11/30 11:16:51.000.057,E:\Delphi Project\30-11-2024\Unit3.dfm=E:\Delphi Project\30-11-2024\LoginForm.dfm</Transaction>
+    <Transaction>2024/11/30 11:16:51.000.057,E:\Delphi Project\30-11-2024\Unit3.pas=E:\Delphi Project\30-11-2024\LoginForm.pas</Transaction>
+    <Transaction>2024/11/30 13:07:30.000.288,=E:\Delphi Project\30-11-2024\Unit2.pas</Transaction>
+    <Transaction>2024/11/30 13:09:07.000.252,E:\Delphi Project\30-11-2024\Unit2.dfm=E:\Delphi Project\30-11-2024\DataStoreForm.dfm</Transaction>
+    <Transaction>2024/11/30 13:09:07.000.252,E:\Delphi Project\30-11-2024\Unit2.pas=E:\Delphi Project\30-11-2024\DataStoreForm.pas</Transaction>
+  </Transactions>
+</BorlandProject>

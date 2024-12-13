@@ -1,0 +1,34 @@
+unit TwoQueryTableForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask,
+  vcl.Wwdbedit, Vcl.ExtCtrls, Vcl.Grids, vcl.wwdbigrd, vcl.wwdbgrid, Data.DB,
+  Data.Win.ADODB;
+
+type
+  TFormTwoQueryTable = class(TForm)
+    ADOConnection1: TADOConnection;
+    ADOQuery1: TADOQuery;
+    ADOQuery2: TADOQuery;
+    DataSource1: TDataSource;
+    wwDBGrid1: TwwDBGrid;
+    DBNavigator1: TDBNavigator;
+    wwDBEdit1: TwwDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormTwoQueryTable: TFormTwoQueryTable;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,350 @@
+object FormDataTable: TFormDataTable
+  Left = 0
+  Top = 0
+  Caption = 'DataTable'
+  ClientHeight = 381
+  ClientWidth = 505
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object wwDBNavigator1: TwwDBNavigator
+    Left = 35
+    Top = 196
+    Width = 350
+    Height = 25
+    DataSource = DataSource1
+    RepeatInterval.InitialDelay = 500
+    RepeatInterval.Interval = 100
+    object wwDBNavigator1First: TwwNavButton
+      Left = 0
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Move to first record'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1First'
+      Enabled = False
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 0
+      Style = nbsFirst
+    end
+    object wwDBNavigator1PriorPage: TwwNavButton
+      Left = 25
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Move backward 10 records'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1PriorPage'
+      Enabled = False
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 1
+      Style = nbsPriorPage
+    end
+    object wwDBNavigator1Prior: TwwNavButton
+      Left = 50
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Move to prior record'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1Prior'
+      Enabled = False
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 2
+      Style = nbsPrior
+    end
+    object wwDBNavigator1Next: TwwNavButton
+      Left = 75
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Move to next record'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1Next'
+      Enabled = False
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 3
+      Style = nbsNext
+    end
+    object wwDBNavigator1NextPage: TwwNavButton
+      Left = 100
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Move forward 10 records'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1NextPage'
+      Enabled = False
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 4
+      Style = nbsNextPage
+    end
+    object wwDBNavigator1Last: TwwNavButton
+      Left = 125
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Move to last record'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1Last'
+      Enabled = False
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 5
+      Style = nbsLast
+    end
+    object wwDBNavigator1Insert: TwwNavButton
+      Left = 150
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Insert new record'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1Insert'
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 6
+      Style = nbsInsert
+    end
+    object wwDBNavigator1Delete: TwwNavButton
+      Left = 175
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Delete current record'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1Delete'
+      Enabled = False
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 7
+      Style = nbsDelete
+    end
+    object wwDBNavigator1Edit: TwwNavButton
+      Left = 200
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Edit current record'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1Edit'
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 8
+      Style = nbsEdit
+    end
+    object wwDBNavigator1Post: TwwNavButton
+      Left = 225
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Post changes of current record'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1Post'
+      Enabled = False
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 9
+      Style = nbsPost
+    end
+    object wwDBNavigator1Cancel: TwwNavButton
+      Left = 250
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Cancel changes made to current record'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1Cancel'
+      Enabled = False
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 10
+      Style = nbsCancel
+    end
+    object wwDBNavigator1Refresh: TwwNavButton
+      Left = 275
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Refresh the contents of the dataset'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1Refresh'
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 11
+      Style = nbsRefresh
+    end
+    object wwDBNavigator1SaveBookmark: TwwNavButton
+      Left = 300
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Bookmark current record'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1SaveBookmark'
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 12
+      Style = nbsSaveBookmark
+    end
+    object wwDBNavigator1RestoreBookmark: TwwNavButton
+      Left = 325
+      Top = 0
+      Width = 25
+      Height = 25
+      Hint = 'Go back to saved bookmark'
+      ImageIndex = -1
+      NumGlyphs = 2
+      Spacing = 4
+      Transparent = False
+      Caption = 'wwDBNavigator1RestoreBookmark'
+      Enabled = False
+      DisabledTextColors.ShadeColor = clGray
+      DisabledTextColors.HighlightColor = clBtnHighlight
+      Index = 13
+      Style = nbsRestoreBookmark
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 46
+    Top = 56
+    Width = 339
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'AcId'
+        Width = 20
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Name'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Email'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Contact'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Password'
+        Width = 80
+        Visible = True
+      end>
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 416
+    Top = 160
+  end
+  object adoconnection: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Password=saadmin;Persist Security Info=True;' +
+      'User ID=sa;Initial Catalog=DemoDataBase;Data Source=DESKTOP-3PUQ' +
+      '500\SQLEXPRESS'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 416
+    Top = 32
+  end
+  object ADOTable1: TADOTable
+    Active = True
+    Connection = adoconnection
+    CursorType = ctStatic
+    TableName = 'Table_1'
+    Left = 416
+    Top = 96
+  end
+  object MainMenu1: TMainMenu
+    Left = 8
+    Top = 8
+    object Demo1: TMenuItem
+      Caption = 'Demo'
+      object Demo11: TMenuItem
+        Caption = 'Demo 1'
+      end
+      object Demo21: TMenuItem
+        Caption = 'Demo 2'
+      end
+    end
+    object File1: TMenuItem
+      Caption = 'File'
+      object Save1: TMenuItem
+        Caption = 'Save'
+      end
+      object SaveAs1: TMenuItem
+        Caption = 'Save As'
+      end
+    end
+  end
+end

@@ -1,0 +1,14 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  MyTest1Form in 'MyTest1Form.pas' {FormMyTest1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormMyTest1, FormMyTest1);
+  Application.Run;
+end.

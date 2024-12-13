@@ -1,0 +1,91 @@
+unit LoginForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Data.DB, FireDAC.Comp.Client;
+
+type
+  TFormLogin = class(TForm)
+    DBEditUserName: TDBEdit;
+    DBEditPassword: TDBEdit;
+    lblUserName: TLabel;
+    lblPassword: TLabel;
+    btnLogin: TButton;
+    btnBackToSignUp: TButton;
+    lblLoginPage: TLabel;
+    FDConnection: TFDConnection;  // FireDAC Connection Component
+    procedure btnBackToSignUpClick(Sender: TObject);
+    procedure btnLoginClick(Sender: TObject);
+  private
+    function ValidateCredentials(const Username, Password: string): Boolean;
+  public
+    { Public declarations }
+  end;
+
+var
+  FormLogin: TFormLogin;
+  FormSignUp: TForm; // Declare globally to manage the instance.
+
+implementation
+
+uses
+  SignUpForm;
+
+{$R *.dfm}
+
+procedure TFormLogin.btnBackToSignUpClick(Sender: TObject);
+begin
+  if not Assigned(FormSignUp) then
+    FormSignUp := TFormSignUp.Create(Self); // Create the form if not already created.
+
+  FormSignUp.Show; // Show the SignUp form.
+end;
+
+procedure TFormLogin.btnLoginClick(Sender: TObject);
+var
+  Username, Password: string;
+begin
+  Username := DBEditUserName.Text;
+  Password := DBEditPassword.Text;
+
+  if ValidateCredentials(Username, Password) then
+    ShowMessage('Login successful!')
+  else
+    ShowMessage('Invalid username or password.');
+end;
+
+function TFormLogin.ValidateCredentials(const Username, Password: string): Boolean;
+var
+  Query: TFDQuery;
+  EncryptedPassword: string;
+begin
+  Result := False; // Default to invalid credentials.
+
+  if FDConnection.Connected then
+  begin
+    Query := TFDQuery.Create(nil);
+    try
+      Query.Connection := FDConnection;
+
+      // Use a parameterized query to prevent SQL injection.
+      Query.SQL.Text := 'SELECT COUNT(*) FROM Users WHERE UserName = :UserName AND Password = :Password';
+      Query.ParamByName('UserName').AsString := Username;
+      Query.ParamByName('Password').AsString := Password; // Assume the password is plain text.
+
+      Query.Open;
+
+      // Check if there's a matching record.
+      if Query.Fields[0].AsInteger > 0 then
+        Result := True;
+    finally
+      Query.Free;
+    end;
+  end
+  else
+    ShowMessage('Database connection is not established.');
+end;
+
+end.
+

@@ -1,0 +1,16 @@
+program Project3;
+
+uses
+  Vcl.Forms,
+  SignUpLoginForm in 'SignUpLoginForm.pas' {Form1},
+  Unit2 in 'Unit2.pas' {FormSignUP};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormSignUP, FormSignUP);
+  Application.Run;
+end.

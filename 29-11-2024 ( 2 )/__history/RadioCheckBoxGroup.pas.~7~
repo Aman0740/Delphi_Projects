@@ -1,0 +1,44 @@
+unit RadioCheckBoxGroup;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.CheckLst;
+
+type
+  TFormRadioCheckBoxGroup = class(TForm)
+    edtValue: TEdit;
+    edtValue2: TEdit;
+    edtTotal: TEdit;
+    Memo1: TMemo;
+    CheckListBox1: TCheckListBox;
+    RadioGroup1: TRadioGroup;
+    btnSubmit: TButton;
+    lblRadioButtons: TLabel;
+    lblCheckBoxs: TLabel;
+    lblValue1: TLabel;
+    lblValue2: TLabel;
+    procedure btnSubmitClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormRadioCheckBoxGroup: TFormRadioCheckBoxGroup;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormRadioCheckBoxGroup.btnSubmitClick(Sender: TObject);
+var
+  a, b: Integer;
+begin
+if CheckListBox1.Checked[0] then // Addition
+    Memo1.Lines.Add(a + b);
+end;
+
+end.

@@ -1,0 +1,68 @@
+unit RadioCheckBoxGroup;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.CheckLst;
+
+type
+  TFormRadioCheckBoxGroup = class(TForm)
+    edtValue: TEdit;
+    edtValue2: TEdit;
+    edtTotal: TEdit;
+    Memo1: TMemo;
+    CheckListBox1: TCheckListBox;
+    RadioGroup1: TRadioGroup;
+    btnSubmit: TButton;
+    lblRadioButtons: TLabel;
+    lblCheckBoxs: TLabel;
+    lblValue1: TLabel;
+    lblValue2: TLabel;
+    procedure btnSubmitClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormRadioCheckBoxGroup: TFormRadioCheckBoxGroup;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormRadioCheckBoxGroup.btnSubmitClick(Sender: TObject);
+var
+  a, b, resultValue: Integer;
+begin
+
+  a := StrToIntDef(edtValue.Text, 0);
+  b := StrToIntDef(edtValue2.Text, 0);
+  resultValue := 0;
+
+  if CheckListBox1.Checked[0] then // Addition
+    resultValue := a + b;
+
+  if CheckListBox1.Checked[1] then // Subtraction
+    resultValue := a - b;
+
+  if CheckListBox1.Checked[2] then // Multiplication
+    resultValue := a * b;
+
+  if CheckListBox1.Checked[3] then // Division
+  begin
+    if b <> 0 then
+      resultValue := a div b // Integer division
+    else
+      Memo1.Lines.Add('Error: Division by zero');
+  end;
+
+  // Display the result
+  edtTotal.Text := IntToStr(resultValue);
+  Memo1.Lines.Add('Result: ' + IntToStr(resultValue));
+end;
+
+end.
+
